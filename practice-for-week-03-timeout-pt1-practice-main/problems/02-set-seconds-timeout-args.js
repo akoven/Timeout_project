@@ -22,31 +22,9 @@ setSecondsTimeoutArgs(function(arg1, arg2) {
 }, 0.7, 'hello', 'world'); // should print 'hello-world' after 700ms
 ***********************************************************************/
 
-// function setSecondsTimeoutArgs(cb, delayInSeconds, ...args) {
-//   let delay = delayInSeconds * 1000;
-//   let sum = 0;
-
-//   if (typeof args === Number) {
-//     for (let i = 0; i < args.length; i++) {
-//       sum += args[i];
-//     }
-//     return sum;
-//   }
-
-//   if (typeof args === String) {
-//     for (let i = 0; i < args.length; i++) {
-//       return args[i] + args[i + 1];
-//     }
-//   }
-//   setTimeout(cb, delay)
-
-// }
-
 function setSecondsTimeoutArgs(cb, delayInSeconds, ...args) {
   let delay = delayInSeconds * 1000;
-
-  return setTimeout(cb, delay, ...args)
-
+  return setTimeout(cb, delay, ...args);
 }
 
 function printSum(num1, num2, num3) {
@@ -54,7 +32,7 @@ function printSum(num1, num2, num3) {
 }
 setSecondsTimeoutArgs(printSum, 0.25, 5, 1, 4); // should print '10' after 250ms
 
-setSecondsTimeoutArgs(function (arg1, arg2) {
+setSecondsTimeoutArgs(function(arg1, arg2) {
   console.log(arg1 + '-' + arg2);
 }, 0.7, 'hello', 'world'); // should print 'hello-world' after 700ms
 
