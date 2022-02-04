@@ -27,6 +27,8 @@ function postpone(cb, delay) {
   let timeout = setTimeout(() => {
     cb();
   },delay)
+
+  clearTimeout(timeout);
   return cb;
 }
 
